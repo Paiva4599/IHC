@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="css/tictactoe.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="box">
+        <header>Jogo da Velha</header>
+        <div class="content">
+            <div class="title">Escolha seu símbolo</div>
+            <div class="options">
+                <button class="playerX">Jogador (X)</button>
+                <button class="playerO">Jogador (O)</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="board">
+        <div class="details">
+            <div class="player">
+                <span class="X">Vez de X</span>
+                <span class="O">Vez de O</span>
+                <div class="slider"></div>
+            </div>
+        </div>
+
+        <div class="area">
+            <section>
+                <span class="box1"></span>
+                <span class="box2"></span>
+                <span class="box3"></span>
+            </section>
+            <section>
+                <span class="box4"></span>
+                <span class="box5"></span>
+                <span class="box6"></span>
+            </section>
+            <section>
+                <span class="box7"></span>
+                <span class="box8"></span>
+                <span class="box9"></span>
+            </section>
+        </div>     
+    </div>
+
+    <div class="results">
+        <div class="winner">Jogador <p>X</p> Ganhou!</div>
+        <div class="btn">
+            <button>Jogar de novo</button>
+        </div>
+    </div>
+
+    <script src="js/tictactoe.js"></script>
+
+
+</body>
+
+</html>

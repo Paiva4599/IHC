@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    background-color: salmon;
+}
+
+.menu{
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    padding-top: 350px;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.menu h1{
+    font-size: 50px;
+}
+
+.menu a{
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+}
