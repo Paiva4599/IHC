@@ -20,7 +20,7 @@ window.onload = () => {
   buttonO.onclick = () => {
     box.classList.add("hide");
     board.classList.add("show");
-    player.setAttribute("class", "players active player");
+    player.setAttribute("class", "players active player O");
   };
 };
 
@@ -31,7 +31,7 @@ let runBot = true;
 
 function clickedBox(element) {
   console.log("click");
-  if (player.classList.contains("player")) {
+  if (player.classList.contains("O")) {
     sign = "O";
     element.innerHTML = `<i class="${playerOIcon}"></i>`;
     player.classList.remove("active");
@@ -110,7 +110,7 @@ function selectWinner() {
       board.classList.remove("show");
       results.classList.add("show");
     }, 700);
-    winner.innerHTML = `Jogador <p>${sign}</p> venceu!`;
+    winner.innerHTML = `<span>Jogador <b>${sign}</b> venceu!</span>`;
   } else {
     if (
       getClass(1) != "" &&
