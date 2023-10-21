@@ -1,30 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap');
 
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
-    background-color: salmon;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fragment Mono", sans-serif;
+  text-align: center;
+  background-color: #FFFFFF;
 }
 
-.menu{
-    color: white;
-    text-align: center;
-    font-weight: 700;
-    padding-top: 350px;
-    justify-content: center;
-    max-width: 100%;
+.menu {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  color: #000000;
+  text-align: center;
+  justify-content: center;
+  max-width: 100%;
 }
 
-.menu h1{
-    font-size: 50px;
+.menu a {
+  color: #000000;
+  font-size: 30px;
+  text-decoration: none;
 }
 
-.menu a{
-    color: white;
-    font-size: 30px;
-    text-decoration: none;
+#game-list {
+  overflow: hidden;
+  flex-grow: 0;
+  height: 0;
+  opacity: 0;
+  transition: flex-grow 400ms ease-out;
+}
+#game-list.visible {
+  flex-grow: 0.2;
+  height: auto;
+  opacity: 1;
+}
+#menu-title {
+  border: none;
+  background: none;
+  color: #000000;
+  font-size: 50px;
 }

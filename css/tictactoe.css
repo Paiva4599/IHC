@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap');
 
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Fragment Mono', sans-serif;
 }
 
 body{
-    background: salmon;
+    background: #FFFFFF;
 }
 
 .box, .board, .results{
@@ -60,7 +60,7 @@ body{
     padding: 8px 0;
     border: none;
     outline: none;
-    background: salmon;
+    background: #000000;
     border-radius: 5px;
     color: white;
     cursor: pointer;
@@ -105,7 +105,7 @@ body{
 }
 
 .board .details span{
-    color: salmon;
+    color: #000000;
     width: 100%;
     border-radius: 5px;
     padding: 7px 0;
@@ -128,14 +128,14 @@ body{
     left: 0;
     height: 100%;
     width: 50%;
-    background: salmon;
+    background: #000000;
     border-radius: 5px;
     z-index: 2;
     transition: all 0.3s ease;
 }
 
 .players.active span:first-child{
-    color: salmon;
+    color: #000000;
 }
 
 .players.active span:nth-child(2){
@@ -147,24 +147,30 @@ body{
 }
 
 .board .area{
+    height: 248px;
+    width: 248px;
     margin-top: 20px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .board section{
     display: flex;
+    justify-content: space-between;
 }
 
 .board section span{
-    display: block;
-    margin:3px;
+    margin: -1px;
     height: 80px;
     width: 80px;
+    border-color: white;
     background: white;
-    border-radius: 5px;
     font-size: 40px;
     text-align: center;
     line-height: 80px;
-    color: salmon;
+    color: #000000;
 }
 
 .results{
@@ -208,7 +214,7 @@ body{
     padding: 8px 20px;
     border: none;
     outline: none;
-    background: salmon;
+    background: #000000;
     border-radius: 5px;
     color: white;
     cursor: pointer;
