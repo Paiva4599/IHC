@@ -15,7 +15,7 @@ window.onload = function () {
 
             let tile = document.createElement("img");
             tile.id = r.toString() + "-" + c.toString();
-            tile.src = "../IHC-main/assets/sliding/" + possible_order.shift() + ".jpg";
+            tile.src = "../IHC/assets/sliding/" + possible_order.shift() + ".jpg";
 
             tile.addEventListener("dragstart", dragStart);
             tile.addEventListener("dragover", dragOver);
