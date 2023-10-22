@@ -9,6 +9,8 @@ var turns = 0;
 var possible_order = ["4", "2", "8", "5", "1", "6", "7", "9", "3"];
 var correct_order = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
+var not_finished = true
+
 window.onload = function () {
     for (let r = 0; r < rows; r++) {
         for (let c = 0; c < columns; c++) {
@@ -66,7 +68,7 @@ function dragEnd() {
 
         let is_adjacent = left || right || up || down;
 
-        if (is_adjacent) {
+        if (is_adjacent && not_finished) {
             let clicked_img = clicked_tile.src;
             let blank_img = blank_tile.src;
 
@@ -91,7 +93,9 @@ function dragEnd() {
     }
 
     if (possible_order.toString() == correct_order.toString()) {
-        alert("Você ganhou em " + turns + " tentativas!!");
+        let result = document.querySelector(".win");
+        result.innerHTML = "Você ganhou em " + turns + " Movimentos!!"
+        not_finished = false
     }
 
     possible_order = []
