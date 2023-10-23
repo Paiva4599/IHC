@@ -1,3 +1,4 @@
+// source: https://github.com/0fc0de/minesweeper-board
 class Minesweeper {
   constructor() {
     this.board = [];
