@@ -30,7 +30,6 @@ let sign = "X";
 let runBot = true;
 
 function clickedBox(element) {
-  console.log("click");
   if (player.classList.contains("O")) {
     sign = "O";
     element.innerHTML = `<i class="${playerOIcon}"></i>`;
@@ -79,7 +78,6 @@ function bot(runBot) {
 }
 
 function getClass(idname) {
-    console.log(document.getElementsByClassName(`box${idname}`));
   return document.getElementsByClassName(`box${idname}`)[0].id;
 }
 
