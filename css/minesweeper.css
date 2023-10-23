@@ -24,11 +24,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease 1s;
 }
 
 .game.hide {
   opacity: 0;
+  transition: all 0.3s ease 1s;
 }
 
 .row {
@@ -55,6 +55,10 @@
   background-color: #fc5102;
 }
 
+.cell.flagged {
+  background-color: black;
+}
+
 #mine-counter {
     width: 120px;
     margin: 8px;
@@ -76,13 +80,14 @@
   border-radius: 5px;
   opacity: 0;
   pointer-events: none;
-  transition: all 0.3s ease 1s;
+  transition: none;
 }
 
 .results.show{
   max-width: 350px;
   opacity: 1;
   pointer-events: auto;
+  transition: all 0.3s ease 1s;
 }
 
 .results .winner{
@@ -90,11 +95,6 @@
   font-weight: 500;
   display: flex;
   justify-content: center;
-}
-
-.results .winner p{
-  font-weight: 600;
-  margin: 0 3px;
 }
 
 .results .btn{
@@ -114,4 +114,14 @@
   color: white;
   cursor: pointer;
   transform: all 0.3s ease;
+}
+
+#return-to-board {
+  display: none;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+#return-to-board.show {
+  display: block;
 }

@@ -15,6 +15,7 @@ const results = document.querySelector(".results");
 const game = document.querySelector(".game");
 const btn = document.querySelector(".btn");
 const resultMessage = document.querySelector(".winner");
+const returnToBoard = document.getElementById("return-to-board");
 
 var flagCounter = 10;
 const winMessage = "Você venceu!";
@@ -36,6 +37,10 @@ window.onload = () => {
 
 function openCell(cell) {
   cell.innerHTML = "";
+  if (cell.classList.contains("flagged")) {
+    cell.classList.remove("flagged");
+  }
+
   const cellContent = document.createElement("DIV");
   [i, j] = cell.id.split(" ");
 
@@ -78,24 +83,24 @@ function openCell(cell) {
 }
 
 function flagCell(cell) {
-  var position = cell.id.split(" ").map(item => parseInt(item));
-  // position = position.map(item => parseInt(item))
+  var position = cell.id.split(" ").map((item) => parseInt(item));
   cell.classList.add("flagged");
   cell.innerHTML = `<i class="fa fa-flag" aria-hidden="true"></i>`;
   checkIfMine(position);
-  const checkIfFinish = (updateCounter() == 0);
+  const checkIfFinish = updateCounter() == 0;
 
   if (checkIfFinish) {
     if (leftMines.length == 0) {
       finishGame(winMessage);
     } else {
       finishGame(loseMessage);
+      returnToBoard.classList.add("show");
     }
   }
 }
 
 function unflagCell(cell) {
-  var position = cell.id.split(" ").map(item => parseInt(item));
+  var position = cell.id.split(" ").map((item) => parseInt(item));
   cell.classList.remove("flagged");
   cell.innerHTML = "";
   updateCounter(false);
@@ -130,14 +135,30 @@ btn.onclick = () => {
   window.location.reload();
 };
 
+returnToBoard.onclick = () => {
+  game.classList.remove("hide");
+  results.classList.remove("show");
+  returnToBoard.classList.remove("show");
+};
+
 function checkIfMine(position) {
-  if (minesweeper.minesPositions.some(item => item[0] == position[0] && item[1] == position[1])) {
-    leftMines = leftMines.filter((item) => !(item[0] == position[0] && item[1] == position[1]));
+  if (
+    minesweeper.minesPositions.some(
+      (item) => item[0] == position[0] && item[1] == position[1]
+    )
+  ) {
+    leftMines = leftMines.filter(
+      (item) => !(item[0] == position[0] && item[1] == position[1])
+    );
   }
 }
 
 function checkIfMineUnflag(position) {
-  if (minesweeper.minesPositions.some(item => item[0] == position[0] && item[1] == position[1])) {
+  if (
+    minesweeper.minesPositions.some(
+      (item) => item[0] == position[0] && item[1] == position[1]
+    )
+  ) {
     leftMines.push(position);
   }
 }
